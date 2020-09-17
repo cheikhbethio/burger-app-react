@@ -6,25 +6,25 @@ import Aux from '../../../wrappers/Wrapper';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 
 const sideDrawer = (props) => {
-    // let attachedClasses = [cssClasses.SidedDrawer, cssClasses.closed];
-    // if(props.open) {
-    //     attachedClasses = [cssClasses.SidedDrawer, cssClasses.open];
-    // }
-    return ( 
+    let attachedClasses = [cssClasses.SideDrawer, cssClasses.Close];
+    if (props.open) {
+        attachedClasses = [cssClasses.SideDrawer, cssClasses.Open];
+    }
+    return (
         <Aux>
             <Backdrop show={props.open} clicked={props.closed} />
-            <div className={cssClasses.SideDrawer}>
+            <div className={attachedClasses.join(' ')}>
                 <div className={cssClasses.Logo}>
-                    <Logo/>
+                    <Logo />
                 </div>
                 <nav>
-                    <NavigationItems/>
+                    <NavigationItems />
                 </nav>
             </div>
 
-        </Aux>   
+        </Aux>
 
-     );
+    );
 }
 export default sideDrawer;
 // import React from 'react'

@@ -5,20 +5,25 @@ import Toolbar from '../Navigation/Toolbar/Toolbar';
 import classes from './Layout.css'
 
 class Layout extends Component {
-    state = {showSideDrawer: true};
+    state = { showSideDrawer: false };
     sideDrawerClose = () => {
-       this.setState({ showSideDrawer: false});
+        this.setState({ showSideDrawer: false });
     }
-    render () { 
-       return (
-        <Aux>            
-            <Toolbar/>
-            <SideDrawer/>
-            <main className={classes.Content}>
-                {this.props.children}
-            </main>
-        </Aux>
-    )}
+
+    toggleSidedrawer = () => {
+        this.setState({ showSideDrawer: !this.state.showSideDrawer })
+    }
+    render() {
+        return (
+            <Aux>
+                <Toolbar toggleSidedrawer={this.toggleSidedrawer} />
+                <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClose} />
+                <main className={classes.Content}>
+                    {this.props.children}
+                </main>
+            </Aux>
+        )
+    }
 }
 
 export default Layout;
