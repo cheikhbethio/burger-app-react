@@ -13,7 +13,7 @@ class Layout extends Component {
        return (
         <Aux>            
             <Toolbar/>
-            <SideDrawer open={this.state.showSideDrawer} closed={this.state.sideDrawerClose}/>
+            <SideDrawer/>
             <main className={classes.Content}>
                 {this.props.children}
             </main>
@@ -22,3 +22,5 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+            // <SideDrawer open={this.state.showSideDrawer} closed={this.state.sideDrawerClose}/>
