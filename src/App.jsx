@@ -1,8 +1,9 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
-import Layout from './components/Layouts/Layout.jsx';
-import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder.jsx';
-import Checkout from './containers/Checkout/Checkout.jsx';
 import { Route, Switch } from 'react-router-dom';
+import Layout from './components/Layouts/Layout';
+import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
+import Checkout from './containers/Checkout/Checkout';
 import Orders from './containers/Orders/Orders';
 
 class App extends Component {
@@ -11,9 +12,9 @@ class App extends Component {
       <div>
         <Layout>
           <Switch>
-            <Route path='/checkout' component={Checkout}/>
-            <Route path='/Orders' component={Orders}/>
-            <Route path='/' exact component={BurgerBuilder}/>
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/Orders" component={Orders} />
+            <Route path="/" exact component={BurgerBuilder} />
           </Switch>
         </Layout>
       </div>
